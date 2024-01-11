@@ -10,6 +10,7 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.itstepproject.R
@@ -17,7 +18,9 @@ import com.example.itstepproject.adapters.BestDealsAdapter
 import com.example.itstepproject.adapters.BestProductAdapter
 import com.example.itstepproject.adapters.SpecialProductsAdapter
 import com.example.itstepproject.databinding.FragmentMainCategoryBinding
+import com.example.itstepproject.fragments.shopping.HomeFragmentDirections
 import com.example.itstepproject.util.Resource
+import com.example.itstepproject.util.showBottomNavigationView
 import com.example.itstepproject.viewmodel.MainCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -47,6 +50,25 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
         setupSpecialProductsRv()
         setupBestDealsRv()
         setupBestProductsRv()
+
+        specialProductsAdapter.onClick = {clickedProduct ->
+            val action = HomeFragmentDirections.actionHomeFragmentToProductDetailsFragment(product = clickedProduct)
+            findNavController().navigate(action)
+        }
+
+        bestDealsAdapter.onClick = {clickedProduct ->
+            val action = HomeFragmentDirections.actionHomeFragmentToProductDetailsFragment(product = clickedProduct)
+            findNavController().navigate(action)
+        }
+
+        bestProductsAdapter.onClick = {clickedProduct ->
+            val action = HomeFragmentDirections.actionHomeFragmentToProductDetailsFragment(product = clickedProduct)
+            findNavController().navigate(action)
+        }
+
+
+
+
         lifecycleScope.launchWhenStarted {
             viewModel.specialProducts.collectLatest {
                 when (it){
@@ -144,5 +166,10 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = specialProductsAdapter
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        showBottomNavigationView()
     }
 }
