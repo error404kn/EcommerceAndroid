@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ITStepProject</string>
+    <string name="shopName">TechRoom</string>
+    <string name="welcome">მოგესალმებით სასიამოვნო შოპინგს გისურვებთ TechRoom-ზე</string>
+    <string name="textDescript">TechRoom-ზე იხილავთ ყველაზე მაღალი ხარისხის ტექნიკას</string>
+    <string name="loginRegisterText">შოპინგის დასაწყებად გთხოვთ გაიაროთ რეგისტრაცია</string>
+</resources>
