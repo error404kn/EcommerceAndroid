@@ -27,5 +27,7 @@ object AppModule {
 //    @Provides
 //    fun provideIntroductionSP(
 //        application: Application
-//    ) = application.getSharedPreferences(INTRODUCTION_SP, MODE_PRIVATE)
+//    ): SharedPreferences? {
+//        return application.getSharedPreferences(INTRODUCTION_SP, MODE_PRIVATE)
+//    }
 }
