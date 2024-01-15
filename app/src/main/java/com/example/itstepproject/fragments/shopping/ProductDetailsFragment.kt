@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.itstepproject.R
-import com.example.itstepproject.activities.ShoppingActivity
 import com.example.itstepproject.adapters.ColorsAdapter
 import com.example.itstepproject.adapters.ViewPager2Images
 import com.example.itstepproject.data.CartProduct
@@ -20,7 +19,6 @@ import com.example.itstepproject.databinding.FragmentProductDetailsBinding
 import com.example.itstepproject.util.Resource
 import com.example.itstepproject.util.hideBottomNavigationView
 import com.example.itstepproject.viewmodel.DetailsViewModel
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
