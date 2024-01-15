@@ -30,20 +30,18 @@ class ChairFragment: BaseCategoryFragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.offerProducts.collectLatest {
-                when (it) {
+                when(it){
                     is Resource.Loading -> {
-
+                        showOfferLoading()
                     }
-
                     is Resource.Success -> {
                         offerAdapter.differ.submitList(it.data)
+                        hideOfferLoading()
                     }
-
                     is Resource.Error -> {
-                        Snackbar.make(requireView(), it.message.toString(), Snackbar.LENGTH_LONG)
-                            .show()
+                        Snackbar.make(requireView(),it.message.toString(),Snackbar.LENGTH_LONG).show()
+                        hideOfferLoading()
                     }
-
                     else -> Unit
                 }
             }
@@ -51,20 +49,18 @@ class ChairFragment: BaseCategoryFragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.bestProducts.collectLatest {
-                when (it) {
+                when(it){
                     is Resource.Loading -> {
-
+                        showBestProductsLoading()
                     }
-
                     is Resource.Success -> {
                         bestProductsAdapter.differ.submitList(it.data)
+                        hideBestProductsLoading()
                     }
-
                     is Resource.Error -> {
-                        Snackbar.make(requireView(), it.message.toString(), Snackbar.LENGTH_LONG)
-                            .show()
+                        Snackbar.make(requireView(),it.message.toString(),Snackbar.LENGTH_LONG).show()
+                        hideBestProductsLoading()
                     }
-
                     else -> Unit
                 }
             }

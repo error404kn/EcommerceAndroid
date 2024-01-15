@@ -24,6 +24,7 @@ import com.example.itstepproject.util.showBottomNavigationView
 import com.example.itstepproject.viewmodel.MainCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 
 private val TAG = "MainCategoryFragment"
@@ -68,8 +69,7 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
 
 
 
-
-        lifecycleScope.launchWhenStarted {
+        viewLifecycleOwner.lifecycleScope.launch{
             viewModel.specialProducts.collectLatest {
                 when (it){
                     is Resource.Loading ->{
@@ -89,7 +89,9 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
             }
         }
 
-        lifecycleScope.launchWhenStarted {
+
+
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.bestDealsProducts.collectLatest {
                 when (it){
                     is Resource.Loading ->{
@@ -109,7 +111,8 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
             }
         }
 
-        lifecycleScope.launchWhenStarted {
+
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.bestProducts.collectLatest {
                 when (it){
                     is Resource.Loading ->{

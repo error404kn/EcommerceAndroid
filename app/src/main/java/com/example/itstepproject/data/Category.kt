@@ -2,11 +2,11 @@ package com.example.itstepproject.data
 
 sealed class Category(val category: String) {
 
-    object Laptops: Category("ლეპტოპები")
-    object Mouses: Category("მაუსები")
-    object MousePads: Category("მაუს პედები")
-    object Headsets: Category("ყურსასმენები")
-    object Keyboards: Category("კლავიატურები")
-    object Chairs: Category("სავარძლები")
+    object Laptops: Category("Laptops")
+    object Mouses: Category("Mouses")
+    object MousePads: Category("MousePads")
+    object Headsets: Category("Headsets")
+    object Keyboards: Category("Keyboards")
+    object Chairs: Category("Chairs")
 
 }

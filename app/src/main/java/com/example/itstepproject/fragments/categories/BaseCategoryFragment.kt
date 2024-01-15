@@ -67,6 +67,22 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
 
     }
 
+    fun showOfferLoading(){
+        binding.offerProductsProgressBar.visibility = View.VISIBLE
+    }
+
+    fun hideOfferLoading(){
+        binding.offerProductsProgressBar.visibility = View.GONE
+    }
+
+    fun showBestProductsLoading(){
+        binding.bestProductsProgressBar.visibility = View.VISIBLE
+    }
+
+    fun hideBestProductsLoading(){
+        binding.bestProductsProgressBar.visibility = View.GONE
+    }
+
     open fun onOfferPagingRequest(){
 
     }

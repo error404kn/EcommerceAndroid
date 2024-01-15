@@ -57,7 +57,7 @@ class CategoryViewModel constructor(
             _bestProducts.emit(Resource.Loading())
         }
         firestore.collection("Products").whereEqualTo("category",category.category)
-            .whereEqualTo("offerPercentage", null).limit(pagingInfo.bestProductPage * 10).get()
+            .whereEqualTo("offerPercentage", null).get()
             .addOnSuccessListener { result ->
                 val products = result.toObjects(Product::class.java)
                 viewModelScope.launch {
