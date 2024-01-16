@@ -10,7 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="50dp"
+        android:paddingTop="70dp"
         android:text="@string/shopName"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -79,55 +79,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="60dp"
-        android:background="@color/blue"
+        style="@style/blueButton"
         android:text="Register"
         app:spinning_bar_color="@color/white"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edPasswordRegister" />
 
-    <ImageView
-        android:id="@+id/facebookLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/facebook_1__1_"
-        app:layout_constraintStart_toStartOf="@+id/buttonRegisterRegister"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegisterRegister" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="8dp"
-        android:text="Facebook"
-        android:textColor="@color/light_grey"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/facebookLogin"
-        app:layout_constraintTop_toTopOf="@+id/facebookLogin" />
-
-    <ImageView
-        android:id="@+id/gmailLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:layout_marginLeft="100dp"
-        android:src="@drawable/gmail"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegisterRegister" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gmail"
-        android:textColor="@color/light_grey"
-        android:textSize="15sp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/gmailLogin"
-        app:layout_constraintTop_toTopOf="@+id/gmailLogin" />
 
 
 
