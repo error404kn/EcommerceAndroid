@@ -10,7 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="100dp"
+        android:paddingTop="150dp"
         android:text="@string/shopName"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -66,56 +66,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="@color/blue"
         android:paddingHorizontal="20mm"
         android:text="Login"
-        android:textColor="@color/white"
+        style="@style/blueButton"
         app:spinning_bar_color="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvForgotPasswordLogin" />
-
-    <ImageView
-        android:id="@+id/facebookLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/facebook_1__1_"
-        app:layout_constraintStart_toStartOf="@+id/buttonLoginLogin"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLoginLogin" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="8dp"
-        android:text="Facebook"
-        android:textColor="@color/light_grey"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/facebookLogin"
-        app:layout_constraintTop_toTopOf="@+id/facebookLogin" />
-
-    <ImageView
-        android:id="@+id/gmailLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:layout_marginLeft="100dp"
-        android:src="@drawable/gmail"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLoginLogin" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gmail"
-        android:textColor="@color/light_grey"
-        android:textSize="15sp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/gmailLogin"
-        app:layout_constraintTop_toTopOf="@+id/gmailLogin" />
 
 
 

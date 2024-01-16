@@ -1,6 +1,7 @@
 package com.example.itstepproject.fragments.shopping
 
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +12,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.itstepproject.R
 import com.example.itstepproject.adapters.ColorsAdapter
 import com.example.itstepproject.adapters.ViewPager2Images
 import com.example.itstepproject.data.CartProduct
+import com.example.itstepproject.data.Product
 import com.example.itstepproject.databinding.FragmentProductDetailsBinding
 import com.example.itstepproject.util.Resource
 import com.example.itstepproject.util.hideBottomNavigationView
@@ -88,7 +91,22 @@ class ProductDetailsFragment: Fragment() {
 
         binding.apply {
             tvProductName.text = product.name
-            tvProductPrice.text = "$ ${product.price}"
+
+            product.offerPercentage?.let {
+                val remainingPricePercentage = 1f - it
+                val priceAfterOffer = remainingPricePercentage * product.price
+                tvProductOfferPrice.text = "$ ${String.format("%.2f",priceAfterOffer)}"
+                tvProductOfferPrice.visibility = View.VISIBLE
+                val newSize = 6f
+                val scale = resources.displayMetrics.scaledDensity
+                val newSizeInPixels = newSize * scale
+                tvProductPrice.setTextSize(TypedValue.COMPLEX_UNIT_SP, newSizeInPixels)
+            } ?: run {
+                tvProductOfferPrice.visibility = View.GONE
+            }
+
+            tvProductPrice.text = "${product.price}"
+
             tvProductDescription.text = product.description
 
             if (product.colors.isNullOrEmpty())
