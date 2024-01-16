@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_color"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,16 +26,6 @@
                 android:layout_height="match_parent">
 
 
-                <ImageView
-                    android:id="@+id/imageCloseCart"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/ic_close"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/black" />
 
 
                 <TextView
@@ -42,11 +33,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:text="My Cart"
+                    android:padding="20dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/imageCloseCart"
-                    app:layout_constraintStart_toStartOf="@id/imageCloseCart"
-                    app:layout_constraintTop_toTopOf="@id/imageCloseCart" />
+                    android:textSize="20sp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
