@@ -61,7 +61,7 @@
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:gravity="start|center_vertical"
-        android:hint="დაამატეთ მისამართი"
+        android:hint="მისამართი მაგალითად: Home"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:singleLine="true"
