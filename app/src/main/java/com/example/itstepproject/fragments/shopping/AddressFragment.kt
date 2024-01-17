@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.itstepproject.data.Address
 import com.example.itstepproject.databinding.FragmentAddressBinding
 import com.example.itstepproject.util.Resource
@@ -21,6 +22,7 @@ import kotlinx.coroutines.launch
 class AddressFragment : Fragment() {
     private lateinit var binding: FragmentAddressBinding
     val viewModel by viewModels<AddressViewModel>()
+    val args by navArgs<AddressFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +35,23 @@ class AddressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.imageAddressClose.setOnClickListener{
+            findNavController().navigateUp()
+        }
+
+        val address = args.address
+        if (address == null){
+            binding.buttonDelete.visibility = View.GONE
+        }else{
+            binding.apply {
+                edAddressTitle.setText(address.addressTitle)
+                edFullName.setText(address.fullName)
+                edState.setText(address.state)
+                edPhone.setText(address.phone)
+                edCity.setText(address.city)
+            }
+        }
 
         binding.apply {
             buttonSave.setOnClickListener {
